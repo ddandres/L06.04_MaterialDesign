@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">L06.04_MaterialDesign</string>
+    <string name="button_linear_vertical">LinearLayout Vertical</string>
+    <string name="button_linear_horizontal">LinearLayout Horizontal</string>
+    <string name="button_grid_vertical">Grid Vertical</string>
+    <string name="button_grid_horizontal">Grid Horizontal</string>
+    <string name="button_staggered_vertical">Staggered Vertical</string>
+    <string name="button_staggered_horizontal">Staggered Horizontal</string>
+    <string name="message">FloatingActionButton clicked!</string>
+</resources>
