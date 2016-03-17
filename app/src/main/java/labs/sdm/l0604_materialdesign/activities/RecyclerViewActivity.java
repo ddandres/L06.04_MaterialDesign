@@ -2,7 +2,7 @@
  * Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package online.dsic.l0604_materialdesign.activities;
+package labs.sdm.l0604_materialdesign.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -18,9 +18,9 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-import online.dsic.l0604_materialdesign.R;
-import online.dsic.l0604_materialdesign.adapters.CustomRecyclerAdapter;
-import online.dsic.l0604_materialdesign.pojo.Item;
+import labs.sdm.l0604_materialdesign.R;
+import labs.sdm.l0604_materialdesign.adapters.CustomRecyclerAdapter;
+import labs.sdm.l0604_materialdesign.pojo.Item;
 
 /**
  * Displays a list of custom Items using different elements from Material Design:

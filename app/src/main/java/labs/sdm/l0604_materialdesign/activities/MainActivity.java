@@ -2,14 +2,14 @@
  * Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package online.dsic.l0604_materialdesign.activities;
+package labs.sdm.l0604_materialdesign.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import online.dsic.l0604_materialdesign.R;
+import labs.sdm.l0604_materialdesign.R;
 
 /**
  * Gives access to an activity showing a RecyclerView with different LayoutManager.

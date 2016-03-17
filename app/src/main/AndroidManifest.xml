@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="online.dsic.l0604_materialdesign">
+    package="labs.sdm.l0604_materialdesign">
 
     <application
         android:allowBackup="true"

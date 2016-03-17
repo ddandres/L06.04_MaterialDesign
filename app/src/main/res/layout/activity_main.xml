@@ -11,7 +11,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="online.dsic.l0604_materialdesign.activities.MainActivity">
+    tools:context="labs.sdm.l0604_materialdesign.activities.MainActivity">
 
     <!--Buttons that will launch the activity displaying the RecyclerView with a different LayoutManager-->
     <Button

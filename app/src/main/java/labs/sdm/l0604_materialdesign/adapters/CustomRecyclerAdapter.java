@@ -2,7 +2,7 @@
  * Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package online.dsic.l0604_materialdesign.adapters;
+package labs.sdm.l0604_materialdesign.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import online.dsic.l0604_materialdesign.R;
-import online.dsic.l0604_materialdesign.pojo.Item;
+import labs.sdm.l0604_materialdesign.R;
+import labs.sdm.l0604_materialdesign.pojo.Item;
 
 /**
  * Custom adapter to associate the source data with Views within the RecyclerView.

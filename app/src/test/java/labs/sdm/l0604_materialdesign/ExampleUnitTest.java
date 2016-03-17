@@ -1,4 +1,4 @@
-package online.dsic.l0604_materialdesign;
+package labs.sdm.l0604_materialdesign;
 
 import org.junit.Test;
 

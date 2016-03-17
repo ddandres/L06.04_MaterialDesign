@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "online.dsic.l0604_materialdesign"
+        applicationId "labs.sdm.l0604_materialdesign"
         minSdkVersion 10
         targetSdkVersion 23
         versionCode 1
