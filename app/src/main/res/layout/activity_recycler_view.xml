@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
+  -->
+
+<!--
+  ~ Coordinates the activity of FloatingActionButtons and SnackBars, on one hand,
+  ~ and RecyclerView and ToolBar on the other
+  -->
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,12 +14,14 @@
     android:layout_height="match_parent"
     tools:context=".activities.RecyclerViewActivity">
 
+    <!--AppBarLayout is required to enable the coordination of RecyclerView and ToolBar-->
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
+        <!--layout_scrollFlags defines the ToolBar behavior when the RecyclerView scrolls-->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
@@ -22,12 +31,17 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <!--
+      ~ layout_behavior states that this component will trigger scroll events
+      ~ to other elements in the same CoordinatorLayout
+      -->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    <!--Automatically coordinates with SnackBars-->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabMessage"
         android:layout_width="wrap_content"

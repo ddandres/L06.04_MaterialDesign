@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
+ */
+
 package online.dsic.l0604_materialdesign.activities;
 
 import android.content.Intent;
@@ -8,7 +12,7 @@ import android.view.View;
 import online.dsic.l0604_materialdesign.R;
 
 /**
- *
+ * Gives access to an activity showing a RecyclerView with different LayoutManager.
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -27,30 +31,45 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Determine
+     * Starts the activity with different configurations.
      */
     public void buttonClicked(View view) {
+
         Intent intent = new Intent(this, RecyclerViewActivity.class);
+        // Determine what to do depending on the Button clicked
         switch(view.getId()) {
+
+            // LinearLayoutManager, vertical scroll
             case R.id.bLinearVertical:
                 intent.putExtra("mode", LINEAR_VERTICAL);
                 break;
+
+            // LinearLayoutManager, horizontal scroll
             case R.id.bLinearHorizontal:
                 intent.putExtra("mode", LINEAR_HORIZONTAL);
                 break;
+
+            // GridLayoutManager, vertical scroll
             case R.id.bGridVertical:
                 intent.putExtra("mode", GRID_VERTICAL);
                 break;
+
+            // GridLayoutManager, horizontal scroll
             case R.id.bGridHorizontal:
                 intent.putExtra("mode", GRID_HORIZONTAL);
                 break;
+
+            // StaggeredGridLayoutManager, vertical scroll
             case R.id.bStaggeredVertical:
                 intent.putExtra("mode", STAGGERED_VERTICAL);
                 break;
+
+            // StaggeredGridLayoutManager, horizontal scroll
             case R.id.bStaggeredHorizontal:
                 intent.putExtra("mode", STAGGERED_HORIZONTAL);
                 break;
         }
+        // Launch the activity containing the RecyclerView
         startActivity(intent);
     }
 }

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
+ */
+
 package online.dsic.l0604_materialdesign.activities;
 
 import android.os.Bundle;
@@ -29,8 +33,10 @@ import online.dsic.l0604_materialdesign.pojo.Item;
  */
 public class RecyclerViewActivity extends AppCompatActivity {
 
+    // Hold references to View objects
     CoordinatorLayout coordinator;
     RecyclerView recycler;
+    // Data source to be displayed
     ArrayList<Item> data;
 
     @Override
@@ -38,62 +44,97 @@ public class RecyclerViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
 
+        // Get a reference to the custom ToolBar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolBar);
+        // Replace the default ActionBar (there should be none) by this ToolBar
         setSupportActionBar(toolbar);
 
+        // Get a reference to the CoordinatorLayout
         coordinator = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
 
+        // Get a reference to the RecyclerView
         recycler = (RecyclerView) findViewById(R.id.recycler);
 
+        // Create and set the LayoutManager according to user's selection
         RecyclerView.LayoutManager manager = null;
+        // Information about the required LayoutManager is sent as an Extra within the Intent
         switch (getIntent().getIntExtra("mode", MainActivity.LINEAR_VERTICAL)) {
+
+            // LinearLayout, vertical scroll
             case MainActivity.LINEAR_VERTICAL:
                 manager = new LinearLayoutManager(this);
                 break;
+
+            // LinearLayout, horiontal scroll
             case MainActivity.LINEAR_HORIZONTAL:
                 manager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
                 break;
+
+            // GridLayout, vertical scroll, 2 columns
             case MainActivity.GRID_VERTICAL:
                 manager = new GridLayoutManager(this, 2);
                 break;
+
+            // GridLayout, horizontal scroll, 4 rows
             case MainActivity.GRID_HORIZONTAL:
                 manager = new GridLayoutManager(this, 4, GridLayoutManager.HORIZONTAL, false);
                 break;
+
+            // StaggeredGridLayout, vertical scroll, 2 columns
             case MainActivity.STAGGERED_VERTICAL:
                 manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
                 break;
+
+            // StaggeredGridLayout, horizontal scroll, 3 rows
             case MainActivity.STAGGERED_HORIZONTAL:
                 manager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL);
                 break;
         }
+        // Associate the LayoutManager to the RecyclerView
         recycler.setLayoutManager(manager);
 
+        // Populate the data source with data (done by code)
         data = generateData();
+        /**
+         * Create a custom adapter to associate the data source to the View in charge of displaying them.
+         * This particular constructor takes also an onClickListener as a parameter,
+         * to react to clicks on RecyclerViews items.
+         */
         CustomRecyclerAdapter adapter = new CustomRecyclerAdapter(data, new CustomRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClicked(int position) {
                 Snackbar.make(coordinator, data.get(position).getText(), Snackbar.LENGTH_SHORT).show();
             }
         });
+        // Assciate the adapter to the RecyclerView
         recycler.setAdapter(adapter);
 
+        // Get a reference to the FloatingActionButton
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabMessage);
+        // Clicking the FAB just displays a notification to the user
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Create a SnackBar to display the notification
                 Snackbar snackbar = Snackbar.make(coordinator, R.string.message, Snackbar.LENGTH_INDEFINITE);
+                // Associate an action to the SnackBar
                 snackbar.setAction(R.string.message, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        // Scrolls to the first position of the RecyclerView
                         recycler.smoothScrollToPosition(0);
                     }
                 });
+                // Display the SnackBar
                 snackbar.show();
             }
         });
 
     }
 
+    /**
+     * Populates an ArrayList<Item> with elements to be displayed on the RecyclerView.
+     */
     private ArrayList<Item> generateData() {
         ArrayList<Item> result = new ArrayList<>();
         result.add(new Item("Add", android.R.drawable.ic_menu_add));
