@@ -6,5 +6,3 @@ Displays a list of custom Items using different elements from Material Design:
 - CoordinatorLayout coordinates the FloatingActionButton and SnackBar, so they do not overlap and the SnackBar can be dismissed by swiping.
 - Items are displayed using CardView.
 - RecyclerView displays an ArrayList<Item> as a vertical/horizontal Linear/Grid/StaggeredGridLayout.
-
-Comments are missing from files, but this will have to wait until tomorrow...
