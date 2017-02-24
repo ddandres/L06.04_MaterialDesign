@@ -100,7 +100,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
          * This particular constructor takes also an onClickListener as a parameter,
          * to react to clicks on RecyclerViews items.
          */
-        CustomRecyclerAdapter adapter = new CustomRecyclerAdapter(data, new CustomRecyclerAdapter.OnItemClickListener() {
+        CustomRecyclerAdapter adapter = new CustomRecyclerAdapter(this, data, new CustomRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClicked(int position) {
                 Snackbar.make(coordinator, data.get(position).getText(), Snackbar.LENGTH_SHORT).show();
