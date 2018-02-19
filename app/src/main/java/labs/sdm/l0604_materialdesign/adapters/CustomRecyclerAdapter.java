@@ -95,7 +95,7 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
         ViewHolder(View view) {
             super(view);
             v = view;
-            tv = (TextView) view.findViewById(R.id.tvItem);
+            tv = view.findViewById(R.id.tvItem);
         }
     }
 }

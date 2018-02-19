@@ -24,12 +24,12 @@ import labs.sdm.l0604_materialdesign.pojo.Item;
 
 /**
  * Displays a list of custom Items using different elements from Material Design:
- *   FloatingActionButton just displays a SnackBar with an associated action,
- *   which scrolls the list to the first element.
- *   CoordinatorLayout coordinates the FloatingActionButton and SnackBar,
- *   so they do not overlap and the SnackBar can be dismissed by swiping.
- *   Items are represented by CardView.
- *   RecyclerView displays an ArrayList<Item> as a vertical/horizontal Linear/Grid/StaggeredGridLayout.
+ * FloatingActionButton just displays a SnackBar with an associated action,
+ * which scrolls the list to the first element.
+ * CoordinatorLayout coordinates the FloatingActionButton and SnackBar,
+ * so they do not overlap and the SnackBar can be dismissed by swiping.
+ * Items are represented by CardView.
+ * RecyclerView displays an ArrayList<Item> as a vertical/horizontal Linear/Grid/StaggeredGridLayout.
  */
 public class RecyclerViewActivity extends AppCompatActivity {
 
@@ -45,15 +45,15 @@ public class RecyclerViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recycler_view);
 
         // Get a reference to the custom ToolBar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolBar);
+        Toolbar toolbar = findViewById(R.id.toolBar);
         // Replace the default ActionBar (there should be none) by this ToolBar
         setSupportActionBar(toolbar);
 
         // Get a reference to the CoordinatorLayout
-        coordinator = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
+        coordinator = findViewById(R.id.coordinatorLayout);
 
         // Get a reference to the RecyclerView
-        recycler = (RecyclerView) findViewById(R.id.recycler);
+        recycler = findViewById(R.id.recycler);
 
         // Create and set the LayoutManager according to user's selection
         RecyclerView.LayoutManager manager = null;
@@ -95,7 +95,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         // Populate the data source with data (done by code)
         data = generateData();
-        /**
+        /*
          * Create a custom adapter to associate the data source to the View in charge of displaying them.
          * This particular constructor takes also an onClickListener as a parameter,
          * to react to clicks on RecyclerViews items.
@@ -110,7 +110,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         recycler.setAdapter(adapter);
 
         // Get a reference to the FloatingActionButton
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabMessage);
+        FloatingActionButton fab = findViewById(R.id.fabMessage);
         // Clicking the FAB just displays a notification to the user
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

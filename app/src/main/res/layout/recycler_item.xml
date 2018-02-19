@@ -17,7 +17,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/activity_vertical_margin"
-        android:drawableLeft="@android:drawable/ic_menu_send"
         android:drawableStart="@android:drawable/ic_menu_send"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/white" />
