@@ -2,7 +2,7 @@
  * Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package labs.sdm.l0604_materialdesign.activities;
+package labs.dadm.l0604_materialdesign.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -18,9 +18,9 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-import labs.sdm.l0604_materialdesign.R;
-import labs.sdm.l0604_materialdesign.adapters.CustomRecyclerAdapter;
-import labs.sdm.l0604_materialdesign.pojo.Item;
+import labs.dadm.l0604_materialdesign.R;
+import labs.dadm.l0604_materialdesign.adapters.CustomRecyclerAdapter;
+import labs.dadm.l0604_materialdesign.pojo.Item;
 
 /**
  * Displays a list of custom Items using different elements from Material Design:
@@ -118,7 +118,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 // Create a SnackBar to display the notification
                 Snackbar snackbar = Snackbar.make(coordinator, R.string.message, Snackbar.LENGTH_INDEFINITE);
                 // Associate an action to the SnackBar
-                snackbar.setAction(R.string.message, new View.OnClickListener() {
+                snackbar.setAction(R.string.scroll, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         // Scrolls to the first position of the RecyclerView

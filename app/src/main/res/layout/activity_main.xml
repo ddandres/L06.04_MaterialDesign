@@ -8,7 +8,7 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="labs.sdm.l0604_materialdesign.activities.MainActivity">
+    tools:context=".activities.MainActivity">
 
     <!--Buttons that will launch the activity displaying the RecyclerView with a different LayoutManager-->
     <Button

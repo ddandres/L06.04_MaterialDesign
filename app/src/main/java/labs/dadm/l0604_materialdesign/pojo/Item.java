@@ -2,7 +2,7 @@
  * Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package labs.sdm.l0604_materialdesign.pojo;
+package labs.dadm.l0604_materialdesign.pojo;
 
 /**
  * Custom POJO representing the data to be displayed on the RecyclerView.

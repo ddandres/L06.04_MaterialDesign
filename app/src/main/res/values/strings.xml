@@ -12,5 +12,6 @@
     <string name="button_staggered_vertical">Staggered Vertical</string>
     <string name="button_staggered_horizontal">Staggered Horizontal</string>
     <!--Strings related to the RecyclerView layout-->
-    <string name="message">FloatingActionButton clicked!</string>
+    <string name="message">FAB clicked!</string>
+    <string name="scroll">Scroll to start</string>
 </resources>

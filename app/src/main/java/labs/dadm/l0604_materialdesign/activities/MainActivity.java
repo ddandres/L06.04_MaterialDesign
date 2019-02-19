@@ -2,14 +2,14 @@
  * Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package labs.sdm.l0604_materialdesign.activities;
+package labs.dadm.l0604_materialdesign.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import labs.sdm.l0604_materialdesign.R;
+import labs.dadm.l0604_materialdesign.R;
 
 /**
  * Gives access to an activity showing a RecyclerView with different LayoutManager.
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, RecyclerViewActivity.class);
         // Determine what to do depending on the Button clicked
-        switch(view.getId()) {
+        switch (view.getId()) {
 
             // LinearLayoutManager, vertical scroll
             case R.id.bLinearVertical:

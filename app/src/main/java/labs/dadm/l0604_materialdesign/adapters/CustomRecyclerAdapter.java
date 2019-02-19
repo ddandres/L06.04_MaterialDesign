@@ -2,10 +2,11 @@
  * Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package labs.sdm.l0604_materialdesign.adapters;
+package labs.dadm.l0604_materialdesign.adapters;
 
 import android.content.Context;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +15,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import labs.sdm.l0604_materialdesign.R;
-import labs.sdm.l0604_materialdesign.pojo.Item;
+import labs.dadm.l0604_materialdesign.R;
+import labs.dadm.l0604_materialdesign.pojo.Item;
 
 /**
  * Custom adapter to associate the source data with Views within the RecyclerView.
@@ -43,8 +44,9 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
     /**
      * Creates a ViewHolder for the RecyclerView to represent Items.
      */
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         // Create the View from an XML layout resource
         View view = LayoutInflater.from(parent.getContext())
@@ -57,7 +59,7 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
      * Updates the information displayed on the ViewHolder according to the given position.
      */
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
         // Update the subViews within the holder with information from the data source
         holder.tv.setText(data.get(position).getText());
