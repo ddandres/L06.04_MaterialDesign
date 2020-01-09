@@ -9,8 +9,8 @@ package labs.dadm.l0604_materialdesign.pojo;
  */
 public class Item {
 
-    String text;
-    int image;
+    private String text;
+    private int image;
 
     public Item(String text, int image) {
         this.text = text;

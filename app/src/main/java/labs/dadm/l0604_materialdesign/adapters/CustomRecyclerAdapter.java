@@ -6,12 +6,13 @@ package labs.dadm.l0604_materialdesign.adapters;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -52,7 +53,7 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recycler_item, parent, false);
         // Create a ViewHolder that will hold references to the View and its subViews
-        return new ViewHolder(view);
+        return new ViewHolder(view, listener);
     }
 
     /**
@@ -64,17 +65,14 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
         // Update the subViews within the holder with information from the data source
         holder.tv.setText(data.get(position).getText());
         if (Build.VERSION.SDK_INT > 20) {
-            holder.tv.setCompoundDrawablesWithIntrinsicBounds(context.getResources().getDrawable(data.get(position).getImage(), null), null, null, null);
+            holder.tv.setCompoundDrawablesWithIntrinsicBounds(
+                    context.getResources().getDrawable(data.get(position).getImage(),null),
+                    null, null, null);
         } else {
-            holder.tv.setCompoundDrawablesWithIntrinsicBounds(context.getResources().getDrawable(data.get(position).getImage()), null, null, null);
+            holder.tv.setCompoundDrawablesWithIntrinsicBounds(
+                    context.getResources().getDrawable(data.get(position).getImage()),
+                    null, null, null);
         }
-        // Associate the click listener to the View
-        holder.v.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onItemClicked(holder.getAdapterPosition());
-            }
-        });
     }
 
     /**
@@ -94,9 +92,15 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
         // Hold a reference to a TextView to later change its text
         TextView tv;
 
-        ViewHolder(View view) {
+        ViewHolder(View view, final CustomRecyclerAdapter.OnItemClickListener listener) {
             super(view);
             v = view;
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onItemClicked(getAdapterPosition());
+                }
+            });
             tv = view.findViewById(R.id.tvItem);
         }
     }

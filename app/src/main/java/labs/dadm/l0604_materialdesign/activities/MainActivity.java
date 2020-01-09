@@ -6,7 +6,7 @@ package labs.dadm.l0604_materialdesign.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import labs.dadm.l0604_materialdesign.R;
