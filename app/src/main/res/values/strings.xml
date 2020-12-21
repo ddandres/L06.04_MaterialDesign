@@ -13,5 +13,6 @@
     <string name="button_staggered_horizontal">Staggered Horizontal</string>
     <!--Strings related to the RecyclerView layout-->
     <string name="message">FAB clicked!</string>
+    <string name="fab_description">Display message</string>
     <string name="scroll">Scroll to start</string>
 </resources>

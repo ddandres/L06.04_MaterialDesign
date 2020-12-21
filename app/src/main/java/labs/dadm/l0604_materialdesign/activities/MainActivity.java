@@ -6,8 +6,9 @@ package labs.dadm.l0604_materialdesign.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import labs.dadm.l0604_materialdesign.R;
 
@@ -37,37 +38,25 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, RecyclerViewActivity.class);
         // Determine what to do depending on the Button clicked
-        switch (view.getId()) {
-
+        final int clickedButton = view.getId();
+        if (clickedButton == R.id.bLinearVertical) {
             // LinearLayoutManager, vertical scroll
-            case R.id.bLinearVertical:
-                intent.putExtra("mode", LINEAR_VERTICAL);
-                break;
-
+            intent.putExtra("mode", LINEAR_VERTICAL);
+        } else if (clickedButton == R.id.bLinearHorizontal) {
             // LinearLayoutManager, horizontal scroll
-            case R.id.bLinearHorizontal:
-                intent.putExtra("mode", LINEAR_HORIZONTAL);
-                break;
-
+            intent.putExtra("mode", LINEAR_HORIZONTAL);
+        } else if (clickedButton == R.id.bGridVertical) {
             // GridLayoutManager, vertical scroll
-            case R.id.bGridVertical:
-                intent.putExtra("mode", GRID_VERTICAL);
-                break;
-
+            intent.putExtra("mode", GRID_VERTICAL);
+        } else if (clickedButton == R.id.bGridHorizontal) {
             // GridLayoutManager, horizontal scroll
-            case R.id.bGridHorizontal:
-                intent.putExtra("mode", GRID_HORIZONTAL);
-                break;
-
+            intent.putExtra("mode", GRID_HORIZONTAL);
+        } else if (clickedButton == R.id.bStaggeredVertical) {
             // StaggeredGridLayoutManager, vertical scroll
-            case R.id.bStaggeredVertical:
-                intent.putExtra("mode", STAGGERED_VERTICAL);
-                break;
-
+            intent.putExtra("mode", STAGGERED_VERTICAL);
+        } else if (clickedButton == R.id.bStaggeredHorizontal) {
             // StaggeredGridLayoutManager, horizontal scroll
-            case R.id.bStaggeredHorizontal:
-                intent.putExtra("mode", STAGGERED_HORIZONTAL);
-                break;
+            intent.putExtra("mode", STAGGERED_HORIZONTAL);
         }
         // Launch the activity containing the RecyclerView
         startActivity(intent);

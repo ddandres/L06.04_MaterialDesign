@@ -5,16 +5,17 @@
 package labs.dadm.l0604_materialdesign.activities;
 
 import android.os.Bundle;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-import androidx.appcompat.widget.Toolbar;
-import android.view.View;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -100,34 +101,23 @@ public class RecyclerViewActivity extends AppCompatActivity {
          * This particular constructor takes also an onClickListener as a parameter,
          * to react to clicks on RecyclerViews items.
          */
-        CustomRecyclerAdapter adapter = new CustomRecyclerAdapter(this, data, new CustomRecyclerAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClicked(int position) {
-                Snackbar.make(coordinator, data.get(position).getText(), Snackbar.LENGTH_SHORT).show();
-            }
-        });
+        CustomRecyclerAdapter adapter = new CustomRecyclerAdapter(this, data, position -> Snackbar.make(coordinator, data.get(position).getText(), Snackbar.LENGTH_SHORT).show());
         // Assciate the adapter to the RecyclerView
         recycler.setAdapter(adapter);
 
         // Get a reference to the FloatingActionButton
         FloatingActionButton fab = findViewById(R.id.fabMessage);
         // Clicking the FAB just displays a notification to the user
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Create a SnackBar to display the notification
-                Snackbar snackbar = Snackbar.make(coordinator, R.string.message, Snackbar.LENGTH_INDEFINITE);
-                // Associate an action to the SnackBar
-                snackbar.setAction(R.string.scroll, new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Scrolls to the first position of the RecyclerView
-                        recycler.smoothScrollToPosition(0);
-                    }
-                });
-                // Display the SnackBar
-                snackbar.show();
-            }
+        fab.setOnClickListener(v -> {
+            // Create a SnackBar to display the notification
+            Snackbar snackbar = Snackbar.make(coordinator, R.string.message, Snackbar.LENGTH_INDEFINITE);
+            // Associate an action to the SnackBar
+            snackbar.setAction(R.string.scroll, v1 -> {
+                // Scrolls to the first position of the RecyclerView
+                recycler.smoothScrollToPosition(0);
+            });
+            // Display the SnackBar
+            snackbar.show();
         });
 
     }

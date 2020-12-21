@@ -18,13 +18,13 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/text_height"
         android:layout_margin="@dimen/activity_vertical_margin"
-        android:drawableStart="@android:drawable/ic_menu_send"
         android:gravity="center_vertical"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/white"
         app:autoSizeMaxTextSize="@dimen/text_max"
         app:autoSizeMinTextSize="@dimen/text_min"
         app:autoSizeStepGranularity="@dimen/text_step"
-        app:autoSizeTextType="uniform" />
+        app:autoSizeTextType="uniform"
+        app:drawableStartCompat="@android:drawable/ic_menu_send" />
 
 </androidx.cardview.widget.CardView>
