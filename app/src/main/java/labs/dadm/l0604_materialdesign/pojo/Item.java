@@ -4,9 +4,7 @@
 
 package labs.dadm.l0604_materialdesign.pojo;
 
-/**
- * Custom POJO representing the data to be displayed on the RecyclerView.
- */
+// Custom POJO representing the data to be displayed on the RecyclerView.
 public class Item {
 
     private String text;

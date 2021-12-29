@@ -19,9 +19,7 @@ import java.util.ArrayList;
 import labs.dadm.l0604_materialdesign.R;
 import labs.dadm.l0604_materialdesign.pojo.Item;
 
-/**
- * Custom adapter to associate the source data with Views within the RecyclerView.
- */
+// Custom adapter to associate the source data with Views within the RecyclerView.
 public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAdapter.ViewHolder> {
 
     // Interface defined to react to clicks on the Views within the RecyclerView
@@ -42,9 +40,7 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
         this.listener = listener;
     }
 
-    /**
-     * Creates a ViewHolder for the RecyclerView to represent Items.
-     */
+    // Creates a ViewHolder for the RecyclerView to represent Items.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -56,9 +52,7 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
         return new ViewHolder(view, listener);
     }
 
-    /**
-     * Updates the information displayed on the ViewHolder according to the given position.
-     */
+    // Updates the information displayed on the ViewHolder according to the given position.
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
@@ -69,17 +63,13 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
                 null, null, null);
     }
 
-    /**
-     * Returns the number of elements in the data source.
-     */
+    // Returns the number of elements in the data source.
     @Override
     public int getItemCount() {
         return data.size();
     }
 
-    /**
-     * Custom ViewHolder to hold references to the View and subViews displaying the data.
-     */
+    // Custom ViewHolder to hold references to the View and subViews displaying the data.
     static class ViewHolder extends RecyclerView.ViewHolder {
         // Hold a reference to the View to later associate an onClickListener
         View v;
@@ -89,7 +79,7 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
         ViewHolder(View view, final CustomRecyclerAdapter.OnItemClickListener listener) {
             super(view);
             v = view;
-            v.setOnClickListener(v -> listener.onItemClicked(getAdapterPosition()));
+            v.setOnClickListener(v -> listener.onItemClicked(getAbsoluteAdapterPosition()));
             tv = view.findViewById(R.id.tvItem);
         }
     }

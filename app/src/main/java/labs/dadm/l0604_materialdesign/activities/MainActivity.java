@@ -12,9 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import labs.dadm.l0604_materialdesign.R;
 
-/**
- * Gives access to an activity showing a RecyclerView with different LayoutManager.
- */
+// Gives access to an activity showing a RecyclerView with different LayoutManager.
 public class MainActivity extends AppCompatActivity {
 
     // Constants used to determine how to display the View on the RecyclerView
@@ -29,16 +27,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        View.OnClickListener listener = v -> buttonClicked(v.getId());
+        findViewById(R.id.bLinearVertical).setOnClickListener(listener);
+        findViewById(R.id.bLinearHorizontal).setOnClickListener(listener);
+        findViewById(R.id.bGridVertical).setOnClickListener(listener);
+        findViewById(R.id.bGridHorizontal).setOnClickListener(listener);
+        findViewById(R.id.bStaggeredVertical).setOnClickListener(listener);
+        findViewById(R.id.bStaggeredHorizontal).setOnClickListener(listener);
     }
 
-    /**
-     * Starts the activity with different configurations.
-     */
-    public void buttonClicked(View view) {
+    // Starts the activity with different configurations.
+    public void buttonClicked(int clickedButton) {
 
         Intent intent = new Intent(this, RecyclerViewActivity.class);
         // Determine what to do depending on the Button clicked
-        final int clickedButton = view.getId();
         if (clickedButton == R.id.bLinearVertical) {
             // LinearLayoutManager, vertical scroll
             intent.putExtra("mode", LINEAR_VERTICAL);

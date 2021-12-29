@@ -23,15 +23,13 @@ import labs.dadm.l0604_materialdesign.R;
 import labs.dadm.l0604_materialdesign.adapters.CustomRecyclerAdapter;
 import labs.dadm.l0604_materialdesign.pojo.Item;
 
-/**
- * Displays a list of custom Items using different elements from Material Design:
- * FloatingActionButton just displays a SnackBar with an associated action,
- * which scrolls the list to the first element.
- * CoordinatorLayout coordinates the FloatingActionButton and SnackBar,
- * so they do not overlap and the SnackBar can be dismissed by swiping.
- * Items are represented by CardView.
- * RecyclerView displays an ArrayList<Item> as a vertical/horizontal Linear/Grid/StaggeredGridLayout.
- */
+// Displays a list of custom Items using different elements from Material Design:
+// FloatingActionButton just displays a SnackBar with an associated action,
+// which scrolls the list to the first element.
+// CoordinatorLayout coordinates the FloatingActionButton and SnackBar,
+// so they do not overlap and the SnackBar can be dismissed by swiping.
+// Items are represented by CardView.
+// RecyclerView displays an ArrayList<Item> as a vertical/horizontal Linear/Grid/StaggeredGridLayout.
 public class RecyclerViewActivity extends AppCompatActivity {
 
     // Hold references to View objects
@@ -46,7 +44,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recycler_view);
 
         // Get a reference to the custom ToolBar
-        Toolbar toolbar = findViewById(R.id.toolBar);
+        final Toolbar toolbar = findViewById(R.id.toolBar);
         // Replace the default ActionBar (there should be none) by this ToolBar
         setSupportActionBar(toolbar);
 
@@ -66,7 +64,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 manager = new LinearLayoutManager(this);
                 break;
 
-            // LinearLayout, horiontal scroll
+            // LinearLayout, horizontal scroll
             case MainActivity.LINEAR_HORIZONTAL:
                 manager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
                 break;
@@ -96,17 +94,16 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         // Populate the data source with data (done by code)
         data = generateData();
-        /*
-         * Create a custom adapter to associate the data source to the View in charge of displaying them.
-         * This particular constructor takes also an onClickListener as a parameter,
-         * to react to clicks on RecyclerViews items.
-         */
-        CustomRecyclerAdapter adapter = new CustomRecyclerAdapter(this, data, position -> Snackbar.make(coordinator, data.get(position).getText(), Snackbar.LENGTH_SHORT).show());
-        // Assciate the adapter to the RecyclerView
+
+        // Create a custom adapter to associate the data source to the View in charge of displaying them.
+        // This particular constructor takes also an onClickListener as a parameter,
+        // to react to clicks on RecyclerViews items.
+        final CustomRecyclerAdapter adapter = new CustomRecyclerAdapter(this, data, position -> Snackbar.make(coordinator, data.get(position).getText(), Snackbar.LENGTH_SHORT).show());
+        // Associate the adapter to the RecyclerView
         recycler.setAdapter(adapter);
 
         // Get a reference to the FloatingActionButton
-        FloatingActionButton fab = findViewById(R.id.fabMessage);
+        final FloatingActionButton fab = findViewById(R.id.fabMessage);
         // Clicking the FAB just displays a notification to the user
         fab.setOnClickListener(v -> {
             // Create a SnackBar to display the notification
@@ -122,9 +119,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * Populates an ArrayList<Item> with elements to be displayed on the RecyclerView.
-     */
+    // Populates an ArrayList<Item> with elements to be displayed on the RecyclerView.
     private ArrayList<Item> generateData() {
         ArrayList<Item> result = new ArrayList<>();
         result.add(new Item("Add", android.R.drawable.ic_menu_add));
