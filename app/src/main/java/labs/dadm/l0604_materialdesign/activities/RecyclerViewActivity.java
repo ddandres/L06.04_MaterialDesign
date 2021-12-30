@@ -98,7 +98,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
         // Create a custom adapter to associate the data source to the View in charge of displaying them.
         // This particular constructor takes also an onClickListener as a parameter,
         // to react to clicks on RecyclerViews items.
-        final CustomRecyclerAdapter adapter = new CustomRecyclerAdapter(this, data, position -> Snackbar.make(coordinator, data.get(position).getText(), Snackbar.LENGTH_SHORT).show());
+        final CustomRecyclerAdapter adapter = new CustomRecyclerAdapter(
+                this, data,
+                position -> Snackbar.make(coordinator, data.get(position).getText(), Snackbar.LENGTH_SHORT).show());
         // Associate the adapter to the RecyclerView
         recycler.setAdapter(adapter);
 

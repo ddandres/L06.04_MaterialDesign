@@ -9,10 +9,12 @@ public class Item {
 
     private String text;
     private int image;
+    private boolean checked;
 
     public Item(String text, int image) {
         this.text = text;
         this.image = image;
+        this.checked = false;
     }
 
     public String getText() {
@@ -30,4 +32,14 @@ public class Item {
     public void setImage(int image) {
         this.image = image;
     }
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
+
 }
